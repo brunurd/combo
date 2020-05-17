@@ -12,10 +12,16 @@ namespace LavaLeak.Combo.Editor.Config
     [Serializable]
     public sealed class ComboTaskConfig
     {
+        public string name;
         public string guid;
         public string classFullName;
         public string searchPattern;
         public string path;
+
+        public ComboTaskConfig()
+        {
+            guid = Guid.NewGuid().ToString();
+        }
 
         /// <summary>
         /// Update the cache and execute the task with the updated files.

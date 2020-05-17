@@ -35,16 +35,6 @@ namespace LavaLeak.Combo.Editor.Logging
             LogWarning($"The input directory \"{directoryName}\" don't exists yet...");
         }
 
-        internal static void ComboTaskInitialized(string taskName)
-        {
-            Log($"The Combo task \"{taskName}\" was initialized.");
-        }
-
-        internal static void RegisteredTasksLoaded()
-        {
-            Log("The registered tasks was loaded.");
-        }
-
         internal static void MultipleFilesTaskStarted(string taskName, string searchPattern, string path)
         {
             Log(
@@ -76,6 +66,16 @@ namespace LavaLeak.Combo.Editor.Logging
         internal static void SingleFileTaskFailed(string taskName, string filePath, Exception e)
         {
             LogError($"The Combo task \"{taskName}\" was failed for the file \"{filePath}\". Error: {e.Message}");
+        }
+
+        internal static void UnfoundedTaskWithGuid(string guid)
+        {
+            LogError($"No task with the guid: {guid}");
+        }
+
+        internal static void UnfoundedRegisteredTaskWithName(string name)
+        {
+            Logger.LogError($"Can't find the registered task with the name: {name}");
         }
     }
 }

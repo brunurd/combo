@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using LavaLeak.Combo.Editor.Logging;
 using UnityEditor;
 using UnityEngine;
@@ -47,19 +48,67 @@ namespace LavaLeak.Combo.Editor.Config
         /// <summary>
         /// Execute all config tasks.
         /// </summary>
-        public void ExecuteTasks()
+        public void ExecuteTasks(bool refresh = true)
         {
             if (tasksConfig == null)
             {
                 tasksConfig = new ComboTaskConfig[0];
             }
-            
+
             foreach (var taskConfig in tasksConfig)
             {
                 taskConfig.UpdateCacheAndExecute();
             }
 
-            AssetDatabase.Refresh();
+            if (refresh)
+            {
+                AssetDatabase.Refresh();
+            }
+        }
+
+        /// <summary>
+        /// Get a Combo Task Config index by it guid.
+        /// </summary>
+        /// <param name="guid"></param>
+        /// <returns></returns>
+        public int GetTaskIndexByGuid(string guid)
+        {
+            for (var index = 0; index < tasksConfig.Length; index++)
+            {
+                if (tasksConfig[index].guid == guid)
+                {
+                    return index;
+                }
+            }
+
+            Logging.Logger.UnfoundedTaskWithGuid(guid);
+
+            return -1;
+        }
+
+        /// <summary>
+        /// Remove a Combo Task Config by it guid.
+        /// </summary>
+        /// <param name="guid"></param>
+        public void RemoveTaskByGuid(string guid)
+        {
+            var tasksList = new List<ComboTaskConfig>(tasksConfig);
+
+            for (var index = 0; index < tasksList.Count; index++)
+            {
+                var task = tasksList[index];
+
+                if (task.guid != guid)
+                {
+                    continue;
+                }
+
+                tasksList.Remove(task);
+
+                break;
+            }
+
+            tasksConfig = tasksList.ToArray();
         }
     }
 }

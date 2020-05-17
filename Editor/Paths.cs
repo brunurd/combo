@@ -9,7 +9,7 @@ namespace LavaLeak.Combo.Editor
 
         internal static readonly string config = Path.Combine(_combo, CONFIG_ASSET_NAME);
         internal static readonly string cache = Path.Combine(_combo, ".cache");
-        internal static readonly string registeredTasks = Path.Combine(_combo, ".registeredTasks.json");
+        internal static readonly string logo = "Combo-Logo-Banner_CC-BY-ND_by-Bruno-Araujo_Inspector";
 
         /// <summary>
         /// Generate paths if don't exists.

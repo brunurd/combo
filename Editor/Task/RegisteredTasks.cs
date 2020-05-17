@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using LavaLeak.Combo.Editor.Helpers;
 using UnityEngine;
 using Logger = LavaLeak.Combo.Editor.Logging.Logger;
 
@@ -33,8 +32,8 @@ namespace LavaLeak.Combo.Editor.Task
                 }
 
                 _instantiated = true;
-                _instance = JsonHelper.LoadJsonSafely<RegisteredTasks>(Paths.registeredTasks);
-                Logger.RegisteredTasksLoaded();
+
+                _instance = new RegisteredTasks();
 
                 foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
                 {
@@ -51,7 +50,6 @@ namespace LavaLeak.Combo.Editor.Task
                             {
                                 var instance = (IComboTask) Activator.CreateInstance(type);
                                 _instance.AddTask(instance);
-                                Logger.ComboTaskInitialized(type.Name);
 
                                 break;
                             }
@@ -59,10 +57,28 @@ namespace LavaLeak.Combo.Editor.Task
                     }
                 }
 
-                JsonHelper.SaveJson(Paths.registeredTasks, _instance);
-
                 return _instance;
             }
+        }
+
+        /// <summary>
+        /// Get a RegisteredTask instance in the tasks array by it name.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public RegisteredTask GetRegisteredTaskByName(string name)
+        {
+            foreach (var task in tasks)
+            {
+                if (task.name == name)
+                {
+                    return task;
+                }
+            }
+
+            Logger.UnfoundedRegisteredTaskWithName(name);
+
+            return default;
         }
 
         /// <summary>
