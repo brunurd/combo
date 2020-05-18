@@ -6,6 +6,27 @@ A way to run automated tasks integrated in the **Unity Game Engine** Editor (sim
 
 [License (MIT)][license]
 
+---
+
+## **Installation**
+
+**Install via OpenUPM**
+
+  The package is available on the [openupm registry](https://openupm.com). It's recommended to install it via [openupm-cli](https://github.com/openupm/openupm-cli).
+
+  ```bash
+  openupm add com.lavaleakgames.combo
+  ```
+**Install via Git URL**
+
+  Open *`Packages/manifest.json`* and add the following line to the dependencies block.
+
+```json
+"dependencies": {
+  "com.lavaleakgames.combo": "https://github.com/lavaleak/combo.git"
+}
+```
+
 [logo]: Editor/Logo/Combo-Logo-Banner_CC-BY-ND_by-Bruno-Araujo.png
 [license]: LICENSE
 [oupm]: https://openupm.com/packages/com.lavaleakgames.combo/
