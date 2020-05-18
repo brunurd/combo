@@ -15,7 +15,7 @@ namespace LavaLeak.Combo.EnumFromJsonComboTask.Editor
             var invalidRegex = new Regex(@"^[0-9]");
 
             builder.AppendLine($"namespace {Application.productName.ToPascalCase()} {{");
-            builder.AppendLine($"\tenum {name.ToPascalCase()} {{");
+            builder.AppendLine($"\tpublic enum {name.ToPascalCase()} {{");
 
             var enums = new List<string>();
 
