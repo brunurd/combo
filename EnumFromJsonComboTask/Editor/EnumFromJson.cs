@@ -1,5 +1,6 @@
 using System.IO;
 using LavaLeak.Combo.Editor.Task;
+using UnityEditor;
 using UnityEngine;
 
 namespace LavaLeak.Combo.EnumFromJsonComboTask.Editor
@@ -10,7 +11,7 @@ namespace LavaLeak.Combo.EnumFromJsonComboTask.Editor
         public string SearchPattern => "*.json";
         public string Description => "Transform a json file with a enums field to a enum C# script.";
 
-        public void OnSingleFile(TaskFileInputData input)
+        public void OnCreateOrUpdateSingleFile(TaskFileInputData input)
         {
             var json = JsonUtility.FromJson<JsonFile>(input.contents);
             var name = input.fileName.Capitalize();
@@ -24,6 +25,26 @@ namespace LavaLeak.Combo.EnumFromJsonComboTask.Editor
 
             var path = Path.Combine(directory, $"{name}.cs");
             File.WriteAllText(path, enumFile.ToString());
+        }
+
+        public void OnDeleteSingleFile(TaskFileInputData input)
+        {
+            var name = input.fileName.Capitalize();
+            var directory = Path.Combine("Assets", "Scripts", "Enums");
+            var path = Path.Combine(directory, $"{name}.cs");
+
+            if (!Directory.Exists(directory))
+            {
+                return;
+            }
+
+            foreach (var file in Directory.GetFiles(directory, "*.cs", SearchOption.AllDirectories))
+            {
+                if (file == path)
+                {
+                    AssetDatabase.DeleteAsset(path);
+                }
+            }
         }
     }
 }

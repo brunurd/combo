@@ -9,7 +9,7 @@ namespace LavaLeak.Combo.Editor
             string[] movedFromAssetPaths)
         {
             Paths.Initialize();
-            ComboConfig.Instance.ExecuteTasks();
+            ComboConfig.Instance.ExecuteTasks(true, deletedAssets);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace LavaLeak.Combo.Editor.Task
             fileName = Path.GetFileNameWithoutExtension(path);
             directoryName = Path.GetDirectoryName(path);
             extension = Path.GetExtension(path);
-            contents = File.ReadAllText(path);
+            contents = File.Exists(path) ? File.ReadAllText(path) : string.Empty;
         }
     }
 }

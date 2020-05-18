@@ -25,7 +25,7 @@ namespace LavaLeak.Combo.EnumFromJsonComboTask.Editor
 
                 if (!isInvalid)
                 {
-                    enums.Add(enumValue.ToPascalCase());
+                    enums.Add($"\t\t{enumValue.ToPascalCase()}");
                 }
             }
 

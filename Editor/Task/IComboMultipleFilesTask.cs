@@ -6,10 +6,15 @@
     public interface IComboMultipleFilesTask : IComboTask
     {
         /// <summary>
-        /// Execute a task over multiple files.
-        /// On create or update files.
+        /// Execute a task over created or updated multiple files.
         /// </summary>
         /// <param name="input"></param>
-        void OnMultipleFiles(TaskFileInputData[] input);
+        void OnCreateOrUpdateMultipleFiles(TaskFileInputData[] input);
+
+        /// <summary>
+        /// Execute a task over deleted multiple files.
+        /// </summary>
+        /// <param name="input"></param>
+        void OnDeleteMultipleFiles(TaskFileInputData[] input);
     }
 }

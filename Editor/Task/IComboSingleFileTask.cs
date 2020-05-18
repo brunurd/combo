@@ -6,10 +6,15 @@
     public interface IComboSingleFileTask : IComboTask
     {
         /// <summary>
-        /// Execute a task for a single file.
-        /// On create or update file.
+        /// Execute a task for a created or updated single file.
         /// </summary>
         /// <param name="input"></param>
-        void OnSingleFile(TaskFileInputData input);
+        void OnCreateOrUpdateSingleFile(TaskFileInputData input);
+
+        /// <summary>
+        /// Execute a task for a deleted single file.
+        /// </summary>
+        /// <param name="input"></param>
+        void OnDeleteSingleFile(TaskFileInputData input);
     }
 }

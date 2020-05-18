@@ -48,7 +48,7 @@ namespace LavaLeak.Combo.Editor.Config
         /// <summary>
         /// Execute all config tasks.
         /// </summary>
-        public void ExecuteTasks(bool refresh = true)
+        public void ExecuteTasks(bool refresh = true, string[] deletedAssets = null)
         {
             if (tasksConfig == null)
             {
@@ -58,6 +58,11 @@ namespace LavaLeak.Combo.Editor.Config
             foreach (var taskConfig in tasksConfig)
             {
                 taskConfig.UpdateCacheAndExecute();
+
+                if (deletedAssets != null)
+                {
+                    taskConfig.ExecuteDeletedEvent(deletedAssets);
+                }
             }
 
             if (refresh)
