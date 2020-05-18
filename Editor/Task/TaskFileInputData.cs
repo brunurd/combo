@@ -5,6 +5,9 @@ namespace LavaLeak.Combo.Editor.Task
     public struct TaskFileInputData
     {
         public readonly string path;
+        public readonly string directoryName;
+        public readonly string fileName;
+        public readonly string extension;
         public readonly string contents;
 
         /// <summary>
@@ -14,6 +17,9 @@ namespace LavaLeak.Combo.Editor.Task
         public TaskFileInputData(string path)
         {
             this.path = path;
+            fileName = Path.GetFileName(path);
+            directoryName = Path.GetDirectoryName(path);
+            extension = Path.GetExtension(path);
             contents = File.ReadAllText(path);
         }
     }
