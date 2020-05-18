@@ -7,6 +7,7 @@
     {
         /// <summary>
         /// Execute a task over multiple files.
+        /// On create or update files.
         /// </summary>
         /// <param name="input"></param>
         void OnMultipleFiles(TaskFileInputData[] input);

@@ -7,6 +7,7 @@
     {
         /// <summary>
         /// Execute a task for a single file.
+        /// On create or update file.
         /// </summary>
         /// <param name="input"></param>
         void OnSingleFile(TaskFileInputData input);

@@ -9,7 +9,6 @@ namespace LavaLeak.Combo.Editor.Cache
     {
         public string path;
         public long size;
-        public DateTime updatedAt;
 
         /// <summary>
         /// Generate a file cache with specific file state.
@@ -28,7 +27,6 @@ namespace LavaLeak.Combo.Editor.Cache
 
             this.path = path;
             size = fileInfo.Length;
-            updatedAt = File.GetLastWriteTime(path);
         }
 
         /// <inheritdoc />
@@ -49,7 +47,7 @@ namespace LavaLeak.Combo.Editor.Cache
             {
                 var fileCache = (FileCacheData) obj;
 
-                return fileCache.path == path && fileCache.size == size && fileCache.updatedAt.Equals(updatedAt);
+                return fileCache.path == path && fileCache.size == size;
             }
             catch (InvalidCastException)
             {
