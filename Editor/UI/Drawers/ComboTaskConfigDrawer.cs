@@ -37,6 +37,7 @@ namespace LavaLeak.Combo.Editor.UI.Drawers
 
             task.name = _property.FindPropertyRelative("name").stringValue;
             task.guid = _property.FindPropertyRelative("guid").stringValue;
+            task.injected = _property.FindPropertyRelative("injected").boolValue;
             task.classFullName = _property.FindPropertyRelative("classFullName").stringValue;
             task.searchPattern = _property.FindPropertyRelative("searchPattern").stringValue;
             task.path = _property.FindPropertyRelative("path").stringValue;
@@ -110,6 +111,13 @@ namespace LavaLeak.Combo.Editor.UI.Drawers
 
             position.height = boxRect.height;
             GUI.Box(position, new GUIContent(title));
+
+            if (taskConfig.injected)
+            {
+                EditorGUILayout.HelpBox(
+                    "This is a pre-defined externally injected task configuration.\nIf you edit or remove you lose the task default behaviour.",
+                    MessageType.Warning);
+            }
 
             property.FindPropertyRelative("name").stringValue =
                 EditorGUILayout.TextField(new GUIContent("Name: "), taskConfig.name);

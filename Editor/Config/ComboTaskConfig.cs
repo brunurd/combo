@@ -5,6 +5,7 @@ using LavaLeak.Combo.Editor.Cache;
 using LavaLeak.Combo.Editor.Exceptions;
 using LavaLeak.Combo.Editor.Helpers;
 using LavaLeak.Combo.Editor.Task;
+using UnityEngine;
 using Logger = LavaLeak.Combo.Editor.Logging.Logger;
 
 namespace LavaLeak.Combo.Editor.Config
@@ -18,9 +19,13 @@ namespace LavaLeak.Combo.Editor.Config
         public string searchPattern;
         public string path;
 
+        [SerializeField]
+        internal bool injected;
+
         public ComboTaskConfig()
         {
             guid = Guid.NewGuid().ToString();
+            injected = false;
         }
 
         /// <summary>
