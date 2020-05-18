@@ -32,7 +32,7 @@ namespace LavaLeak.Combo.Editor.Logging
 
         internal static void InputDirectoryDontExists(string directoryName)
         {
-            LogWarning($"The input directory \"{directoryName}\" don't exists yet...");
+            LogWarning($"The input directoryName \"{directoryName}\" don't exists yet...");
         }
 
         internal static void MultipleFilesTaskStarted(string taskName, string searchPattern, string path)

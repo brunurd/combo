@@ -6,7 +6,7 @@
     public interface IComboTask
     {
         /// <summary>
-        /// A pattern to search in the files in the watched directory.
+        /// A pattern to search in the files in the watched directoryName.
         /// </summary>
         string SearchPattern { get; }
     }
