@@ -62,7 +62,7 @@ namespace LavaLeak.Combo.Editor.Task
         }
 
         /// <summary>
-        /// Get a RegisteredTask instance in the tasks array by it name.
+        /// Get a RegisteredTask instance in the tasks array by it full name.
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
@@ -70,7 +70,7 @@ namespace LavaLeak.Combo.Editor.Task
         {
             foreach (var task in tasks)
             {
-                if (task.name == name)
+                if (task.fullName == name)
                 {
                     return task;
                 }
@@ -102,7 +102,7 @@ namespace LavaLeak.Combo.Editor.Task
 
             foreach (var registeredTask in tasks)
             {
-                if (registeredTask.name != task.GetType().FullName)
+                if (registeredTask.fullName != task.GetType().FullName)
                 {
                     tasksList.Add(registeredTask);
                 }

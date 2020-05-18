@@ -5,7 +5,8 @@ namespace LavaLeak.Combo.Editor.Task
     [Serializable]
     public struct RegisteredTask
     {
-        public string name;
+        public string fullName;
+        public string shortName;
 
         [NonSerialized]
         public readonly IComboTask task;
@@ -17,7 +18,9 @@ namespace LavaLeak.Combo.Editor.Task
         public RegisteredTask(IComboTask task)
         {
             this.task = task;
-            name = task.GetType().FullName;
+            var type = task.GetType();
+            fullName = type.FullName;
+            shortName = type.Name;
         }
     }
 }

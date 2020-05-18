@@ -17,7 +17,7 @@ namespace LavaLeak.Combo.Editor.Task
         public TaskFileInputData(string path)
         {
             this.path = path;
-            fileName = Path.GetFileName(path);
+            fileName = Path.GetFileNameWithoutExtension(path);
             directoryName = Path.GetDirectoryName(path);
             extension = Path.GetExtension(path);
             contents = File.ReadAllText(path);

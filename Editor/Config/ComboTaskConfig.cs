@@ -18,6 +18,7 @@ namespace LavaLeak.Combo.Editor.Config
         public string classFullName;
         public string searchPattern;
         public string path;
+        public string description;
 
         [SerializeField]
         internal bool injected;
@@ -50,9 +51,14 @@ namespace LavaLeak.Combo.Editor.Config
             {
                 var type = registeredTask.task.GetType();
 
-                foreach (var _interface in type.GetInterfaces())
+                if (registeredTask.fullName != classFullName)
                 {
-                    if (_interface == typeof(IComboMultipleFilesTask))
+                    break;
+                }
+
+                foreach (var iInterface in type.GetInterfaces())
+                {
+                    if (iInterface == typeof(IComboMultipleFilesTask))
                     {
                         var multipleFilesTask = (IComboMultipleFilesTask) registeredTask.task;
                         var taskName = registeredTask.task.GetType().Name;
@@ -72,7 +78,7 @@ namespace LavaLeak.Combo.Editor.Config
                         break;
                     }
 
-                    if (_interface == typeof(IComboSingleFileTask))
+                    if (iInterface == typeof(IComboSingleFileTask))
                     {
                         var singleFileTask = (IComboSingleFileTask) registeredTask.task;
                         var taskName = registeredTask.task.GetType().Name;

@@ -9,5 +9,10 @@
         /// A pattern to search in the files in the watched directoryName.
         /// </summary>
         string SearchPattern { get; }
+
+        /// <summary>
+        /// A description to the task.
+        /// </summary>
+        string Description { get; }
     }
 }

@@ -11,15 +11,15 @@ namespace LavaLeak.Combo.Editor.UI.Drawers
     {
         private SerializedProperty _property;
 
-        private static GUIContent[] ComboTasksNames
+        private static RegisteredTask[] ComboTasksNames
         {
             get
             {
-                var contents = new List<GUIContent> {new GUIContent("None")};
+                var contents = new List<RegisteredTask> {new RegisteredTask {shortName = "None"}};
 
                 foreach (var task in RegisteredTasks.Instance.Tasks)
                 {
-                    contents.Add(new GUIContent(task.name));
+                    contents.Add(task);
                 }
 
                 return contents.ToArray();
@@ -41,6 +41,7 @@ namespace LavaLeak.Combo.Editor.UI.Drawers
             task.classFullName = _property.FindPropertyRelative("classFullName").stringValue;
             task.searchPattern = _property.FindPropertyRelative("searchPattern").stringValue;
             task.path = _property.FindPropertyRelative("path").stringValue;
+            task.description = _property.FindPropertyRelative("description").stringValue;
 
             return task;
         }
@@ -55,22 +56,29 @@ namespace LavaLeak.Combo.Editor.UI.Drawers
 
         private void TaskPopUp(SerializedProperty property, ComboTaskConfig taskConfig)
         {
-            var names = ComboTasksNames;
+            var registeredTasks = ComboTasksNames;
             var index = 0;
+            var guiContents = new List<GUIContent>();
 
-            for (var i = 0; i < names.Length; i++)
+            foreach (var task in registeredTasks)
             {
-                if (names[i].text == taskConfig.classFullName)
+                guiContents.Add(new GUIContent(task.shortName));
+            }
+
+            for (var i = 0; i < registeredTasks.Length; i++)
+            {
+                if (registeredTasks[i].fullName == taskConfig.classFullName)
                 {
                     index = i;
-
                     break;
                 }
             }
 
+            var contentNames = guiContents.ToArray();
+
             EditorGUI.BeginChangeCheck();
 
-            index = EditorGUILayout.Popup(new GUIContent("Task Type: "), index, names);
+            index = EditorGUILayout.Popup(new GUIContent("Task Type: "), index, contentNames);
 
             if (!EditorGUI.EndChangeCheck())
             {
@@ -82,18 +90,23 @@ namespace LavaLeak.Combo.Editor.UI.Drawers
                 Undo.RecordObject(ComboConfig.Instance, "Change Task Type");
                 property.FindPropertyRelative("classFullName").stringValue = string.Empty;
                 property.FindPropertyRelative("searchPattern").stringValue = string.Empty;
+                property.FindPropertyRelative("description").stringValue = string.Empty;
                 EditorUtility.SetDirty(ComboConfig.Instance);
 
                 return;
             }
 
-            var name = names[index].text;
+            var registeredTask = RegisteredTasks.Instance.GetRegisteredTaskByName(registeredTasks[index].fullName);
 
             Undo.RecordObject(ComboConfig.Instance, "Change Task Type");
-            property.FindPropertyRelative("classFullName").stringValue = name;
+            property.FindPropertyRelative("classFullName").stringValue = registeredTasks[index].fullName;
 
             property.FindPropertyRelative("searchPattern").stringValue =
-                RegisteredTasks.Instance.GetRegisteredTaskByName(name).task.SearchPattern;
+                registeredTask.task.SearchPattern;
+
+            property.FindPropertyRelative("description").stringValue =
+                registeredTask.task.Description;
+
             EditorUtility.SetDirty(ComboConfig.Instance);
         }
 
@@ -106,11 +119,14 @@ namespace LavaLeak.Combo.Editor.UI.Drawers
             var boxRect = EditorGUILayout.BeginVertical(GUI.skin.box);
 
             var title = string.IsNullOrEmpty(taskConfig.name)
-                ? $"Task {taskIndex} - {taskConfig.classFullName}"
+                ? $"Task {taskIndex}"
                 : taskConfig.name;
 
+            var titleContent = new GUIContent(title);
+            titleContent.tooltip = taskConfig.description;
+
             position.height = boxRect.height;
-            GUI.Box(position, new GUIContent(title));
+            GUI.Box(position, titleContent);
 
             if (taskConfig.injected)
             {

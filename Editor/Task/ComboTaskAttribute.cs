@@ -2,7 +2,7 @@
 
 namespace LavaLeak.Combo.Editor.Task
 {
-    [AttributeUsage(AttributeTargets.Class)]
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct)]
     public class ComboTaskAttribute : Attribute
     {
         /// <summary>
