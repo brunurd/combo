@@ -1,7 +1,7 @@
 {
   "name": "com.lavaleakgames.combo",
   "displayName": "Combo: Task Integration Tool",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "unity": "2019.1",
   "description": "A way to run automated tasks integrated in the Unity Game Engine Editor (similar to Grunt or Gulp in the web).",
   "keywords": [
