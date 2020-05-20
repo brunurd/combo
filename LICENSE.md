@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2020 Bruno Araujo
+Copyright (c) 2020 Bruno Araujo  
 Copyright (c) 2020 Lava Leak
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
