@@ -27,7 +27,7 @@ A way to run automated tasks integrated in the **Unity Game Engine** Editor (sim
 }
 ```
 
-[doc]: Documentation/README.md
+[doc]: Documentation.md
 [openupm]: https://img.shields.io/npm/v/com.lavaleakgames.combo?label=openupm&registry_uri=https://package.openupm.com
 [logo]: Editor/Images/Logo/Combo-Logo-Banner_CC-BY-ND_by-Bruno-Araujo.png
 [logo-license]: Editor/Images/Logo/LICENSE.md
