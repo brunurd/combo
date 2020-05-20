@@ -27,11 +27,6 @@ Any class or struct with a **ComboTaskAttribute** and with any type of **IComboT
 ![picture04]
 
 
-|[<< 01. Getting Started][previous]|[03. Create A New Combo Task Package >>][next]|
-|-|-|
-
-[previous]: 01-getting-started.md
-[next]: 03-create-a-new-combo-task-package.md
 [picture02]: ../Editor/Images/picture02.png
 [picture03]: ../Editor/Images/picture03.png
 [picture04]: ../Editor/Images/picture04.png

@@ -33,9 +33,3 @@ The representation of the input file passed as parameters for the tasks, it has 
 - **fileName:** The file name only without the directory or the extension.
 - **extension:** The extension, starting with the dot.
 - **contents:** The full file contents as string.  
-
-
-|[<< 02. ComboUsage][previous]|
-|-|
-
-[previous]: 02-combo-usage.md

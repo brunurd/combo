@@ -21,10 +21,5 @@ Combo can be used for tasks like convert files, save file into a specific folder
 - A **Combo package**, you can create your own or use one from community.  
 
 
-|[<< Go To Summary][previous]|[02. Combo Usage >>][next]|
-|-|-|
-
-[previous]: ../README.md
-[next]: 02-combo-usage.md
 [picture01]: ../Editor/Images/picture01.png
 [get-files]: https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.getfiles?view=netcore-3.1

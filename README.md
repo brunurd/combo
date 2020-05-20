@@ -4,6 +4,8 @@
 
 A way to run automated tasks integrated in the **Unity Game Engine** Editor (similar to Grunt or Gulp in the web).  
 
+|**Links:**|[Documentation][doc]|[Source Code License][license]|[Logo License][logo-license]|
+|-|-|-|-|
 ---
 
 ## **Installation**
@@ -25,26 +27,9 @@ A way to run automated tasks integrated in the **Unity Game Engine** Editor (sim
 }
 ```
 
----
-
-## **Documentation**
-
-1. **[Getting Started][page01]**
-2. **[Combo Usage][page02]**
-3. **[Create A New Combo Task Package][page03]**
-
----
-
-## **Licenses**
-
-Source code: [MIT][license]  
-Logo image: [CC-BY-ND][logo-license]  
-
+[doc]: Documentation/README.md
 [openupm]: https://img.shields.io/npm/v/com.lavaleakgames.combo?label=openupm&registry_uri=https://package.openupm.com
 [logo]: Editor/Images/Logo/Combo-Logo-Banner_CC-BY-ND_by-Bruno-Araujo.png
 [logo-license]: Editor/Images/Logo/LICENSE.md
 [license]: LICENSE.md
 [oupm]: https://openupm.com/packages/com.lavaleakgames.combo/
-[page01]: Documentation/01-getting-started.md
-[page02]: Documentation/02-combo-usage.md
-[page03]: Documentation/03-create-a-new-combo-task-package.md
