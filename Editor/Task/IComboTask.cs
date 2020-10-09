@@ -1,4 +1,4 @@
-﻿namespace LavaLeak.Combo.Editor.Task
+﻿namespace Combo.Editor.Task
 {
     /// <summary>
     /// A task to run in the Combo flow.

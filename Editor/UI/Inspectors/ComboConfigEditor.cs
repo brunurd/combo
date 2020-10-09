@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using LavaLeak.Combo.Editor.Config;
+using Combo.Editor.Config;
 using UnityEditor;
 using UnityEngine;
 
-namespace LavaLeak.Combo.Editor.UI.Inspectors
+namespace Combo.Editor.UI.Inspectors
 {
     [CustomEditor(typeof(ComboConfig))]
     public class ComboConfigEditor : UnityEditor.Editor

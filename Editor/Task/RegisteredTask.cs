@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LavaLeak.Combo.Editor.Task
+namespace Combo.Editor.Task
 {
     [Serializable]
     public struct RegisteredTask

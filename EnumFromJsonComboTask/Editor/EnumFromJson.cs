@@ -1,9 +1,9 @@
 using System.IO;
-using LavaLeak.Combo.Editor.Task;
+using Combo.Editor.Task;
 using UnityEditor;
 using UnityEngine;
 
-namespace LavaLeak.Combo.EnumFromJsonComboTask.Editor
+namespace Combo.EnumFromJsonComboTask.Editor
 {
     [ComboTask]
     public struct EnumFromJson : IComboSingleFileTask

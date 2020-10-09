@@ -1,8 +1,8 @@
 ﻿using System;
-using LavaLeak.Combo.Editor.Config;
+using Combo.Editor.Config;
 using UnityEngine;
 
-namespace LavaLeak.Combo.Editor.Logging
+namespace Combo.Editor.Logging
 {
     public static class Logger
     {

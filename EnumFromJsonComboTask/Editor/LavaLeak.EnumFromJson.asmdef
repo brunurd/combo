@@ -1,7 +1,7 @@
 {
-    "name": "LavaLeak.EnumFromJson",
+    "name": "EnumFromJson",
     "references": [
-        "LavaLeak.Combo"
+        "Combo"
     ],
     "includePlatforms": [
         "Editor"

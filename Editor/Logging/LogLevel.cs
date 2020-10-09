@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LavaLeak.Combo.Editor.Logging
+namespace Combo.Editor.Logging
 {
     [Flags]
     public enum LogLevel

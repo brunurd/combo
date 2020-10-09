@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using LavaLeak.Combo.Editor.Config;
+using Combo.Editor.Config;
 using UnityEditor;
 using UnityEngine;
 
-namespace LavaLeak.Combo.Editor
+namespace Combo.Editor
 {
     [InitializeOnLoad]
     public static class ComboManager

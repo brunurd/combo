@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
-using LavaLeak.Combo.Editor.Cache;
-using LavaLeak.Combo.Editor.Exceptions;
-using LavaLeak.Combo.Editor.Helpers;
-using LavaLeak.Combo.Editor.Task;
+using Combo.Editor.Cache;
+using Combo.Editor.Exceptions;
+using Combo.Editor.Helpers;
+using Combo.Editor.Task;
 using UnityEngine;
-using Logger = LavaLeak.Combo.Editor.Logging.Logger;
+using Logger = Combo.Editor.Logging.Logger;
 
-namespace LavaLeak.Combo.Editor.Config
+namespace Combo.Editor.Config
 {
     [Serializable]
     public sealed class ComboTaskConfig

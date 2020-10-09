@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using LavaLeak.Combo.Editor.Config;
-using LavaLeak.Combo.Editor.Task;
+using Combo.Editor.Config;
+using Combo.Editor.Task;
 using UnityEditor;
 using UnityEngine;
 
-namespace LavaLeak.Combo.Editor.UI.Drawers
+namespace Combo.Editor.UI.Drawers
 {
     [CustomPropertyDrawer(typeof(ComboTaskConfig))]
     public class ComboTaskConfigDrawer : PropertyDrawer

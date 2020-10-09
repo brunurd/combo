@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Logger = LavaLeak.Combo.Editor.Logging.Logger;
+using Logger = Combo.Editor.Logging.Logger;
 
-namespace LavaLeak.Combo.Editor.Task
+namespace Combo.Editor.Task
 {
     [Serializable]
     public struct RegisteredTasks

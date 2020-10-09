@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace LavaLeak.Combo.EnumFromJsonComboTask.Editor
+namespace Combo.EnumFromJsonComboTask.Editor
 {
     public static class StringExtensionMethods
     {

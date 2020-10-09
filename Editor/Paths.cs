@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace LavaLeak.Combo.Editor
+namespace Combo.Editor
 {
     internal static class Paths
     {

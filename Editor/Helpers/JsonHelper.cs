@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using UnityEngine;
 
-namespace LavaLeak.Combo.Editor.Helpers
+namespace Combo.Editor.Helpers
 {
     public static class JsonHelper
     {

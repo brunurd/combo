@@ -23,7 +23,7 @@ A way to run automated tasks integrated in the **Unity Game Engine** Editor (sim
 
 ```json
 "dependencies": {
-  "com.lavaleakgames.combo": "https://github.com/lavaleak/combo.git"
+  "com.lavaleakgames.combo": "https://github.com/brunurd/combo.git"
 }
 ```
 

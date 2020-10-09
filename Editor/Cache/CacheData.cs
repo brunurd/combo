@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
-using LavaLeak.Combo.Editor.Exceptions;
+using Combo.Editor.Exceptions;
 using UnityEngine;
 
-namespace LavaLeak.Combo.Editor.Cache
+namespace Combo.Editor.Cache
 {
     [Serializable]
     public struct CacheData

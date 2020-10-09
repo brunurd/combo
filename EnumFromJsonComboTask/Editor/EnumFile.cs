@@ -3,7 +3,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-namespace LavaLeak.Combo.EnumFromJsonComboTask.Editor
+namespace Combo.EnumFromJsonComboTask.Editor
 {
     internal struct EnumFile
     {

@@ -1,9 +1,9 @@
-﻿using LavaLeak.Combo.Editor.Config;
-using LavaLeak.Combo.Editor.UI.Inspectors;
+﻿using Combo.Editor.Config;
+using Combo.Editor.UI.Inspectors;
 using UnityEditor;
 using UnityEngine;
 
-namespace LavaLeak.Combo.Editor.UI.Windows
+namespace Combo.Editor.UI.Windows
 {
     public class ComboConfigWindow : EditorWindow
     {

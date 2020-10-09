@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LavaLeak.Combo.Editor.Task
+namespace Combo.Editor.Task
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct)]
     public class ComboTaskAttribute : Attribute

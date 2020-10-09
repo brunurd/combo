@@ -1,4 +1,4 @@
-﻿namespace LavaLeak.Combo.Editor.Exceptions
+﻿namespace Combo.Editor.Exceptions
 {
     public class FileNotFoundException : System.IO.FileNotFoundException
     {

@@ -1,7 +1,7 @@
-﻿using LavaLeak.Combo.Editor.Config;
+﻿using Combo.Editor.Config;
 using UnityEditor;
 
-namespace LavaLeak.Combo.Editor
+namespace Combo.Editor
 {
     public class AssetsWatcher : AssetPostprocessor
     {

@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace LavaLeak.Combo.Editor.Task
+namespace Combo.Editor.Task
 {
     public struct TaskFileInputData
     {

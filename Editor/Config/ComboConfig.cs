@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using LavaLeak.Combo.Editor.Logging;
+using Combo.Editor.Logging;
 using UnityEditor;
 using UnityEngine;
 
-namespace LavaLeak.Combo.Editor.Config
+namespace Combo.Editor.Config
 {
     internal sealed class ComboConfig : ScriptableObject
     {

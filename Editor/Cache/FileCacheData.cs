@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
-using FileNotFoundException = LavaLeak.Combo.Editor.Exceptions.FileNotFoundException;
+using FileNotFoundException = Combo.Editor.Exceptions.FileNotFoundException;
 
-namespace LavaLeak.Combo.Editor.Cache
+namespace Combo.Editor.Cache
 {
     [Serializable]
     public struct FileCacheData

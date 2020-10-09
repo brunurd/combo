@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LavaLeak.Combo.Editor.Exceptions
+namespace Combo.Editor.Exceptions
 {
     public class FileCacheNotFoundException : Exception
     {
