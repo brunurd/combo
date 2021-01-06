@@ -1,0 +1,16 @@
+{
+  "name": "markdown-to-pdf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron-pdf -i ../Documentation.md -o ../Documentation.pdf --acceptLanguage en-US",
+    "help": "electron-pdf --help"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron-pdf": "^7.0.0"
+  }
+}
